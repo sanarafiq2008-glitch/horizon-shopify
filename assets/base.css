@@ -77,7 +77,12 @@ video,
 canvas,
 svg {
   display: block;
+<<<<<<< HEAD
   max-width: 101%;
+=======
+  max-width: 99%
+  
+>>>>>>> 1379b014950f126db4ff5930cbc0c2c9375a96bb
 }
 
 img {
