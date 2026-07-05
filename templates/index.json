@@ -290,7 +290,7 @@
       "type": "custom-liquid",
       "name": "Category glow effect",
       "settings": {
-        "custom_liquid": "<style>#shopify-section-collection_list_hR5kD8{background:radial-gradient(ellipse 70% 100% at center,rgba(228,20,105,0.35) 0%,rgba(20,4,14,1) 65%) !important;}#shopify-section-collection_list_hR5kD8 img{border-radius:20px;box-shadow:0 0 60px 14px rgba(232,62,140,0.45);}#shopify-section-collection_list_hR5kD8 a[href]{border-radius:20px;}</style>",
+        "custom_liquid": "<style>#shopify-section-collection_list_hR5kD8 .resource-list{background:radial-gradient(ellipse 65% 140% at center,rgba(232,32,120,0.4) 0%,rgba(15,3,10,1) 68%);border-radius:24px;padding:56px 24px;overflow:visible !important;}#shopify-section-collection_list_hR5kD8 .resource-list__item{position:relative;}#shopify-section-collection_list_hR5kD8 .resource-list__item:not(:first-child){margin-left:-56px;}#shopify-section-collection_list_hR5kD8 .resource-list__item:nth-child(1){z-index:1;}#shopify-section-collection_list_hR5kD8 .resource-list__item:nth-child(2){z-index:2;}#shopify-section-collection_list_hR5kD8 .resource-list__item:nth-child(3){z-index:3;}#shopify-section-collection_list_hR5kD8 .resource-list__item:nth-child(4){z-index:4;}#shopify-section-collection_list_hR5kD8 .resource-list__item:nth-child(5){z-index:5;}#shopify-section-collection_list_hR5kD8 img{border-radius:20px;box-shadow:0 0 50px 10px rgba(232,62,140,0.55);}#shopify-section-collection_list_hR5kD8 a[href]{border-radius:20px;}@media (max-width:749px){#shopify-section-collection_list_hR5kD8 .resource-list__item:not(:first-child){margin-left:-24px;}}</style>",
         "section_width": "full-width",
         "padding-block-start": 0,
         "padding-block-end": 0
@@ -344,7 +344,7 @@
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
-                "text_color": "#ffffff",
+                "text_color": "#000000",
                 "padding-block-start": 0,
                 "padding-block-end": 16,
                 "padding-inline-start": 0,
@@ -424,7 +424,7 @@
         "rows_gap": 16,
         "icons_style": "chevron_large",
         "icons_shape": "circle",
-        "section_width": "full-width",
+        "section_width": "page-width",
         "gap": 32,
         "padding-block-start": 64,
         "padding-block-end": 64
