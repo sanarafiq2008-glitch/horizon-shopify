@@ -517,10 +517,23 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "icon_WMCcpH": {
+              "type": "icon",
+              "name": "t:names.icon",
+              "settings": {
+                "icon": "box",
+                "width": 32,
+                "link": "",
+                "open_in_new_tab": false,
+                "icon_color": ""
+              },
+              "blocks": {}
             }
           },
           "block_order": [
-            "text_dF7gH3"
+            "text_dF7gH3",
+            "icon_WMCcpH"
           ]
         },
         "static-collection-card": {
@@ -532,7 +545,7 @@
             "horizontal_alignment": "center",
             "vertical_alignment": "center",
             "collection_card_gap": 8,
-            "background_color": "",
+            "background_color": "{{ settings.color_palette.foreground }}",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
@@ -632,7 +645,7 @@
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
+            "gap": 8,
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
@@ -665,7 +678,7 @@
               "type": "icon",
               "settings": {
                 "icon": "truck",
-                "width": 32,
+                "width": 24,
                 "link": "",
                 "open_in_new_tab": false,
                 "icon_color": ""
@@ -745,7 +758,7 @@
             "icon": {
               "type": "icon",
               "settings": {
-                "icon": "check_mark",
+                "icon": "fire",
                 "width": 32,
                 "link": "",
                 "open_in_new_tab": false,
@@ -826,7 +839,7 @@
             "icon": {
               "type": "icon",
               "settings": {
-                "icon": "gift",
+                "icon": "box",
                 "width": 32,
                 "link": "",
                 "open_in_new_tab": false,
@@ -907,7 +920,7 @@
             "icon": {
               "type": "icon",
               "settings": {
-                "icon": "award",
+                "icon": "check_box",
                 "width": 32,
                 "link": "",
                 "open_in_new_tab": false,
@@ -1044,7 +1057,7 @@
         "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "flex-start",
         "vertical_alignment_flex_direction_column": "center",
-        "gap": 24,
+        "gap": 0,
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
@@ -1061,8 +1074,8 @@
         "border_opacity": 100,
         "border_color": "",
         "border_radius": 0,
-        "padding-block-start": 40,
-        "padding-block-end": 40
+        "padding-block-start": 20,
+        "padding-block-end": 16
       }
     },
     "product_list_fa6P9H": {
@@ -3265,8 +3278,8 @@
     "marquee_t7XqZ2",
     "custom_liquid_glowFx1",
     "collection_list_hR5kD8",
-    "section_tB9nX4",
     "product_list_fa6P9H",
+    "section_tB9nX4",
     "product_list_gK3mN7",
     "product_list_zX5cR9",
     "media_with_content_qP6vD3",
