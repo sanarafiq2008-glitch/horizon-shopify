@@ -428,11 +428,12 @@
         "text_pL8vR4",
         "text_yB2nQ6"
       ],
+      "custom_css": [],
       "name": "t:names.marquee",
       "settings": {
         "movement_direction": "normal",
-        "background_color": "#000000",
-        "padding-block-start": 16,
+        "background_color": "#500000",
+        "padding-block-start": 20,
         "padding-block-end": 16,
         "gap_between_elements": 32
       }
@@ -613,7 +614,7 @@
         "icons_shape": "circle",
         "section_width": "page-width",
         "gap": 32,
-        "background_color": "",
+        "background_color": "{{ settings.color_palette.foreground }}",
         "padding-block-start": 64,
         "padding-block-end": 64
       }
