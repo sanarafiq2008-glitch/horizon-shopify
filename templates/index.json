@@ -16,7 +16,7 @@
           "type": "_slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/1000524376.png",
+            "image_1": "shopify://shop_images/Gemini_Generated_Image_4z28oq4z28oq4z28.png",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -27,7 +27,7 @@
             "gap": 20,
             "background_color": "#000000",
             "toggle_overlay": true,
-            "overlay_color": "#12121200",
+            "overlay_color": "rgba(0,0,0,0)",
             "overlay_style": "solid",
             "gradient_direction": "to bottom",
             "padding-block-start": 100,
@@ -92,7 +92,7 @@
           "type": "_slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/1000524343.png",
+            "image_1": "shopify://shop_images/Gemini_Generated_Image_bho5dibho5dibho5.png",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -103,7 +103,7 @@
             "gap": 20,
             "background_color": "#000000",
             "toggle_overlay": false,
-            "overlay_color": "#12121266",
+            "overlay_color": "#ffffff",
             "overlay_style": "solid",
             "gradient_direction": "to bottom",
             "padding-block-start": 100,
@@ -148,6 +148,7 @@
           "name": "t:names.slide",
           "settings": {
             "media_type_1": "image",
+            "image_1": "shopify://shop_images/Gemini_Generated_Image_l88mxil88mxil88m.png",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -167,36 +168,10 @@
             "padding-inline-end": 48
           },
           "blocks": {
-            "text_pYeWaG": {
-              "type": "text",
-              "name": "t:names.heading",
-              "settings": {
-                "text": "<h3>New arrivals</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
             "text_hqnGAk": {
               "type": "text",
               "settings": {
-                "text": "<p>Introducing our latest products, made especially for the season. Shop your favorites before they're gone!</p>",
+                "text": "",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -238,16 +213,16 @@
             }
           },
           "block_order": [
-            "text_pYeWaG",
             "text_hqnGAk",
             "button_NDkrXV"
           ]
         },
-        "slide_MmfGWH": {
+        "slide_CaGhPW": {
           "type": "_slide",
           "name": "t:names.slide",
           "settings": {
             "media_type_1": "image",
+            "image_1": "shopify://shop_images/Gemini_Generated_Image_meug6dmeug6dmeug.png",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -267,11 +242,11 @@
             "padding-inline-end": 48
           },
           "blocks": {
-            "text_7dET89": {
+            "text_8UKg8z": {
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h3>New arrivals</h3>",
+                "text": "",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -293,10 +268,10 @@
               },
               "blocks": {}
             },
-            "text_M7fhei": {
+            "text_RYCRWd": {
               "type": "text",
               "settings": {
-                "text": "<p>Introducing our latest products, made especially for the season. Shop your favorites before they're gone!</p>",
+                "text": "",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -318,7 +293,7 @@
               },
               "blocks": {}
             },
-            "button_6UnQ7j": {
+            "button_BXDEFj": {
               "type": "button",
               "settings": {
                 "label": "Shop now",
@@ -338,9 +313,9 @@
             }
           },
           "block_order": [
-            "text_7dET89",
-            "text_M7fhei",
-            "button_6UnQ7j"
+            "text_8UKg8z",
+            "text_RYCRWd",
+            "button_BXDEFj"
           ]
         }
       },
@@ -348,7 +323,7 @@
         "slide_bK9mWp",
         "slide_pL2xQd",
         "slide_zXVnkx",
-        "slide_MmfGWH"
+        "slide_CaGhPW"
       ],
       "name": "t:names.slideshow",
       "settings": {
@@ -364,7 +339,7 @@
         "icons_shape": "none",
         "slideshow_controls_style": "dots",
         "autoplay": true,
-        "autoplay_speed": 5,
+        "autoplay_speed": 3,
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -456,7 +431,7 @@
       "name": "t:names.marquee",
       "settings": {
         "movement_direction": "normal",
-        "background_color": "#e4572e",
+        "background_color": "#000000",
         "padding-block-start": 16,
         "padding-block-end": 16,
         "gap_between_elements": 32
