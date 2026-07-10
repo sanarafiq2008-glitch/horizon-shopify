@@ -16,7 +16,7 @@
           "type": "_slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/Gemini_Generated_Image_4z28oq4z28oq4z28.png",
+            "image_1": "shopify://shop_images/H1c83915a874740a594ec1f6055f6ab4dW_507b1e41-1bae-4199-9d65-b911ea93b6b8.webp",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -92,8 +92,8 @@
           "type": "_slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/Gemini_Generated_Image_bho5dibho5dibho5.png",
-            "content_direction": "column",
+            "image_1": "shopify://shop_images/1000527923_e0fa72de-9734-4071-bb42-df9b67309c52.jpg",
+            "content_direction": "row",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
@@ -148,7 +148,7 @@
           "name": "t:names.slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/Gemini_Generated_Image_l88mxil88mxil88m.png",
+            "image_1": "shopify://shop_images/1000527923_e0fa72de-9734-4071-bb42-df9b67309c52.jpg",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
