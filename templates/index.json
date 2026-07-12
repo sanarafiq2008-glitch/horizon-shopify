@@ -16,7 +16,7 @@
           "type": "_slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/1000528012.png",
+            "image_1": "shopify://shop_images/1000528061_cf74575b-d50f-4427-a7a8-12498524c28c.png",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -30,7 +30,7 @@
             "overlay_color": "#ffffff",
             "overlay_style": "solid",
             "gradient_direction": "to bottom",
-            "padding-block-start": 100,
+            "padding-block-start": 71,
             "padding-block-end": 72,
             "padding-inline-start": 48,
             "padding-inline-end": 48
@@ -72,7 +72,7 @@
           "name": "t:names.slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/Gemini_Generated_Image_l88mxil88mxil88m.png",
+            "image_1": "shopify://shop_images/1000528062.png",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -144,9 +144,10 @@
         "slide_CaGhPW": {
           "type": "_slide",
           "name": "t:names.slide",
+          "disabled": true,
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/1000528010.png",
+            "image_1": "shopify://shop_images/1000528063.png",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -255,7 +256,7 @@
         "full_frame_on_mobile": false,
         "slideshow_gap": 12,
         "corner_radius": 0,
-        "slide_height": "medium",
+        "slide_height": "large",
         "content_position": "on-media",
         "background_color": "",
         "icons_style": "arrows_large",
@@ -264,7 +265,7 @@
         "autoplay": true,
         "autoplay_speed": 3,
         "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-end": 78
       }
     },
     "marquee_t7XqZ2": {
