@@ -490,7 +490,7 @@
       "name": "t:names.marquee",
       "settings": {
         "movement_direction": "normal",
-        "background_color": "#5A1A89",
+        "background_color": "#4E0E5F",
         "padding-block-start": 20,
         "padding-block-end": 16,
         "gap_between_elements": 32
