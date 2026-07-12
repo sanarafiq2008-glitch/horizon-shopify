@@ -16,7 +16,7 @@
           "type": "_slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/1000529396.png",
+            "image_1": "shopify://shop_images/1000529430.png",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -490,7 +490,7 @@
       "name": "t:names.marquee",
       "settings": {
         "movement_direction": "normal",
-        "background_color": "#4E0E5F",
+        "background_color": "#4e0e5f",
         "padding-block-start": 20,
         "padding-block-end": 16,
         "gap_between_elements": 32
