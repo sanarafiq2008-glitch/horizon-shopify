@@ -14,6 +14,38 @@
     "section_4h7TxC": {
       "type": "section",
       "blocks": {
+        "ai_gen_block_2d6bba7_rhNGAw": {
+          "type": "ai_gen_block_2d6bba7",
+          "name": "Policy menu",
+          "settings": {
+            "title": "OUR POLICY",
+            "layout": "vertical",
+            "alignment": "center",
+            "mobile_stack": true,
+            "desktop_width_percent": 60,
+            "show_privacy": true,
+            "privacy_label": "Privacy Policy",
+            "show_terms": true,
+            "terms_label": "Terms of Service",
+            "show_shipping": true,
+            "shipping_label": "Shipping Policy",
+            "show_refund": true,
+            "refund_label": "Refund Policy",
+            "padding": 20,
+            "border_radius": 0,
+            "background_color": "#1a0a0a",
+            "title_size": 18,
+            "title_spacing": 16,
+            "title_color": "#d4af37",
+            "link_size": 14,
+            "link_spacing": 16,
+            "link_color": "#e8d5c4",
+            "link_hover_color": "#d4af37",
+            "separator": "|",
+            "separator_color": "#8b4049"
+          },
+          "blocks": {}
+        },
         "menu_Mm6jdd": {
           "type": "menu",
           "name": "t:names.menu",
@@ -120,6 +152,7 @@
         }
       },
       "block_order": [
+        "ai_gen_block_2d6bba7_rhNGAw",
         "menu_Mm6jdd",
         "text_y47RaN",
         "text_VTjWmj",

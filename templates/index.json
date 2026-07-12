@@ -2877,7 +2877,7 @@
           "type": "ai_gen_block_2d6bba7",
           "settings": {
             "title": "",
-            "layout": "horizontal",
+            "layout": "vertical",
             "alignment": "center",
             "mobile_stack": true,
             "desktop_width_percent": 100,
