@@ -1,6 +1,398 @@
+{% doc %}
+  @prompt
+    Create a policy menu block that displays links to store policies (Privacy Policy, Terms of Service, Shipping Policy, and Refund Policy) in a horizontal or vertical list. The links should automatically pull from Shopify's built-in shop policies. Style it to match a dark luxury theme with maroon, black, and gold accents.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-policy-menu-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: {{ block.settings.padding }}px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-policy-menu__title-{{ ai_gen_id }} {
+    margin: 0 0 {{ block.settings.title_spacing }}px;
+    color: {{ block.settings.title_color }};
+    font-size: {{ block.settings.title_size }}px;
+    text-align: {{ block.settings.alignment }};
+  }
+
+  .ai-policy-menu__list-{{ ai_gen_id }} {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: {{ block.settings.link_spacing }}px;
+    {% if block.settings.layout == 'vertical' %}
+      flex-direction: column;
+      align-items: {{ block.settings.alignment }};
+    {% else %}
+      flex-direction: row;
+      justify-content: {{ block.settings.alignment }};
+      flex-wrap: wrap;
+    {% endif %}
+  }
+
+  .ai-policy-menu__item-{{ ai_gen_id }} {
+    margin: 0;
+  }
+
+  .ai-policy-menu__link-{{ ai_gen_id }} {
+    color: {{ block.settings.link_color }};
+    text-decoration: none;
+    font-size: {{ block.settings.link_size }}px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 2px;
+  }
+
+  .ai-policy-menu__link-{{ ai_gen_id }}::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: {{ block.settings.link_hover_color }};
+    transition: width 0.3s ease;
+  }
+
+  .ai-policy-menu__link-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.link_hover_color }};
+  }
+
+  .ai-policy-menu__link-{{ ai_gen_id }}:hover::after {
+    width: 100%;
+  }
+
+  {% if block.settings.layout == 'horizontal' %}
+    .ai-policy-menu__item-{{ ai_gen_id }}:not(:last-child)::after {
+      content: '{{ block.settings.separator }}';
+      margin-left: {{ block.settings.link_spacing }}px;
+      color: {{ block.settings.separator_color }};
+      opacity: 0.5;
+    }
+  {% endif %}
+
+  .ai-policy-menu__empty-{{ ai_gen_id }} {
+    color: {{ block.settings.link_color }};
+    opacity: 0.6;
+    font-size: {{ block.settings.link_size }}px;
+    text-align: {{ block.settings.alignment }};
+    font-style: italic;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-policy-menu-{{ ai_gen_id }} {
+      width: 100%;
+    }
+
+    {% if block.settings.mobile_stack %}
+      .ai-policy-menu__list-{{ ai_gen_id }} {
+        flex-direction: column;
+        align-items: {{ block.settings.alignment }};
+      }
+
+      .ai-policy-menu__item-{{ ai_gen_id }}:not(:last-child)::after {
+        display: none;
+      }
+    {% endif %}
+  }
+{% endstyle %}
+
+<policy-menu-{{ ai_gen_id }} class="ai-policy-menu-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.title != blank %}
+    <h3 class="ai-policy-menu__title-{{ ai_gen_id }}">{{ block.settings.title }}</h3>
+  {% endif %}
+
+  {% liquid
+    assign has_policies = false
+    if shop.privacy_policy or shop.terms_of_service or shop.shipping_policy or shop.refund_policy
+      assign has_policies = true
+    endif
+  %}
+
+  {% if has_policies %}
+    <ul class="ai-policy-menu__list-{{ ai_gen_id }}">
+      {% if block.settings.show_privacy and shop.privacy_policy %}
+        <li class="ai-policy-menu__item-{{ ai_gen_id }}">
+          <a href="{{ shop.privacy_policy.url }}" class="ai-policy-menu__link-{{ ai_gen_id }}">
+            {{ block.settings.privacy_label }}
+          </a>
+        </li>
+      {% endif %}
+
+      {% if block.settings.show_terms and shop.terms_of_service %}
+        <li class="ai-policy-menu__item-{{ ai_gen_id }}">
+          <a href="{{ shop.terms_of_service.url }}" class="ai-policy-menu__link-{{ ai_gen_id }}">
+            {{ block.settings.terms_label }}
+          </a>
+        </li>
+      {% endif %}
+
+      {% if block.settings.show_shipping and shop.shipping_policy %}
+        <li class="ai-policy-menu__item-{{ ai_gen_id }}">
+          <a href="{{ shop.shipping_policy.url }}" class="ai-policy-menu__link-{{ ai_gen_id }}">
+            {{ block.settings.shipping_label }}
+          </a>
+        </li>
+      {% endif %}
+
+      {% if block.settings.show_refund and shop.refund_policy %}
+        <li class="ai-policy-menu__item-{{ ai_gen_id }}">
+          <a href="{{ shop.refund_policy.url }}" class="ai-policy-menu__link-{{ ai_gen_id }}">
+            {{ block.settings.refund_label }}
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  {% else %}
+    <p class="ai-policy-menu__empty-{{ ai_gen_id }}">
+      Next, add your store policies in Settings → Policies
+    </p>
+  {% endif %}
+</policy-menu-{{ ai_gen_id }}>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Policy menu",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "horizontal",
+          "label": "Horizontal"
+        },
+        {
+          "value": "vertical",
+          "label": "Vertical"
+        }
+      ],
+      "default": "horizontal"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_stack",
+      "label": "Stack on mobile",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Policies to display"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_privacy",
+      "label": "Privacy policy",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "privacy_label",
+      "label": "Privacy policy label",
+      "default": "Privacy Policy"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_terms",
+      "label": "Terms of service",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "terms_label",
+      "label": "Terms of service label",
+      "default": "Terms of Service"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping",
+      "label": "Shipping policy",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "shipping_label",
+      "label": "Shipping policy label",
+      "default": "Shipping Policy"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_refund",
+      "label": "Refund policy",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "refund_label",
+      "label": "Refund policy label",
+      "default": "Refund Policy"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Padding",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#1a0a0a"
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "title_spacing",
+      "label": "Title spacing",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#d4af37"
+    },
+    {
+      "type": "header",
+      "content": "Links"
+    },
+    {
+      "type": "range",
+      "id": "link_size",
+      "label": "Link size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "link_spacing",
+      "label": "Link spacing",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link color",
+      "default": "#e8d5c4"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_color",
+      "label": "Link hover color",
+      "default": "#d4af37"
+    },
+    {
+      "type": "header",
+      "content": "Separator"
+    },
+    {
+      "type": "text",
+      "id": "separator",
+      "label": "Separator character",
+      "default": "|"
+    },
+    {
+      "type": "color",
+      "id": "separator_color",
+      "label": "Separator color",
+      "default": "#8b4049"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Policy menu"
+    }
+  ]
+}
 {% endschema %}
