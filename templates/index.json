@@ -12,11 +12,11 @@
     "slideshow_nkXPM4": {
       "type": "slideshow",
       "blocks": {
-        "slide_yKm7iE": {
+        "slide_LwkkUf": {
           "type": "_slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/1000529334_8abbab2d-6dad-488e-a275-6ed28010b193.png",
+            "image_1": "shopify://shop_images/1000529396.png",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -36,7 +36,7 @@
             "padding-inline-end": 48
           },
           "blocks": {
-            "text_RHkatW": {
+            "text_7TikdX": {
               "type": "text",
               "name": "t:names.heading",
               "settings": {
@@ -62,7 +62,7 @@
               },
               "blocks": {}
             },
-            "text_87pJj9": {
+            "text_AeUmmy": {
               "type": "text",
               "settings": {
                 "text": "",
@@ -86,37 +86,18 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
-            },
-            "button_VgpFeY": {
-              "type": "button",
-              "settings": {
-                "label": "Shop now",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "custom_button_background": "{{ settings.color_palette.foreground }}",
-                "custom_button_text": "{{ settings.color_palette.background }}",
-                "custom_button_border": "{{ settings.color_palette.background }}",
-                "link_text_color": "",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
             }
           },
           "block_order": [
-            "text_RHkatW",
-            "text_87pJj9",
-            "button_VgpFeY"
+            "text_7TikdX",
+            "text_AeUmmy"
           ]
         },
-        "slide_4GCBcY": {
+        "slide_DFhVnY": {
           "type": "_slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/1000529394.png",
+            "image_1": "shopify://shop_images/1000529391.png",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -130,13 +111,13 @@
             "overlay_color": "#00000026",
             "overlay_style": "solid",
             "gradient_direction": "to top",
-            "padding-block-start": 46,
+            "padding-block-start": 48,
             "padding-block-end": 48,
             "padding-inline-start": 48,
             "padding-inline-end": 48
           },
           "blocks": {
-            "text_ptJtba": {
+            "text_UUjttN": {
               "type": "text",
               "name": "t:names.heading",
               "settings": {
@@ -162,7 +143,7 @@
               },
               "blocks": {}
             },
-            "text_pRckPT": {
+            "text_B3EeXr": {
               "type": "text",
               "settings": {
                 "text": "",
@@ -187,7 +168,7 @@
               },
               "blocks": {}
             },
-            "button_agNwjp": {
+            "button_Xr7TiA": {
               "type": "button",
               "settings": {
                 "label": "Shop now",
@@ -207,15 +188,200 @@
             }
           },
           "block_order": [
-            "text_ptJtba",
-            "text_pRckPT",
-            "button_agNwjp"
+            "text_UUjttN",
+            "text_B3EeXr",
+            "button_Xr7TiA"
+          ]
+        },
+        "slide_7dwC9i": {
+          "type": "_slide",
+          "name": "t:names.slide",
+          "settings": {
+            "media_type_1": "image",
+            "image_1": "shopify://shop_images/1000529393.png",
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "background_color": "",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 48,
+            "padding-block-end": 48,
+            "padding-inline-start": 48,
+            "padding-inline-end": 48
+          },
+          "blocks": {
+            "text_3YhT6C": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_PheFjx": {
+              "type": "text",
+              "settings": {
+                "text": "",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 20,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_3YhT6C",
+            "text_PheFjx"
+          ]
+        },
+        "slide_e8AWRw": {
+          "type": "_slide",
+          "name": "t:names.slide",
+          "settings": {
+            "media_type_1": "image",
+            "image_1": "shopify://shop_images/1000529399.png",
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "background_color": "",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 48,
+            "padding-block-end": 48,
+            "padding-inline-start": 48,
+            "padding-inline-end": 48
+          },
+          "blocks": {
+            "text_PmiWgn": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h3>New arrivals</h3>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_CKxc3m": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Introducing our latest products, made especially for the season. Shop your favorites before they're gone!</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 20,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "button_PGx3yq": {
+              "type": "button",
+              "settings": {
+                "label": "Shop now",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "button",
+                "custom_button_background": "{{ settings.color_palette.foreground }}",
+                "custom_button_text": "{{ settings.color_palette.background }}",
+                "custom_button_border": "{{ settings.color_palette.background }}",
+                "link_text_color": "",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_PmiWgn",
+            "text_CKxc3m",
+            "button_PGx3yq"
           ]
         }
       },
       "block_order": [
-        "slide_yKm7iE",
-        "slide_4GCBcY"
+        "slide_LwkkUf",
+        "slide_DFhVnY",
+        "slide_7dwC9i",
+        "slide_e8AWRw"
       ],
       "name": "t:names.slideshow_full_frame",
       "settings": {
@@ -324,7 +490,7 @@
       "name": "t:names.marquee",
       "settings": {
         "movement_direction": "normal",
-        "background_color": "#500000",
+        "background_color": "#4E0E5F",
         "padding-block-start": 20,
         "padding-block-end": 16,
         "gap_between_elements": 32
@@ -437,7 +603,7 @@
             "horizontal_alignment": "center",
             "vertical_alignment": "center",
             "collection_card_gap": 8,
-            "background_color": "{{ settings.color_palette.foreground }}",
+            "background_color": "#4E0E5F",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
@@ -519,7 +685,7 @@
         "icons_shape": "circle",
         "section_width": "page-width",
         "gap": 32,
-        "background_color": "{{ settings.color_palette.foreground }}",
+        "background_color": "#4E0E5F",
         "padding-block-start": 64,
         "padding-block-end": 64
       }
@@ -744,7 +910,7 @@
             "height": "fit",
             "custom_height": 100,
             "background_media": "none",
-            "background_color": "{{ settings.color_palette.foreground }}",
+            "background_color": "#4E0E5F",
             "video_position": "cover",
             "background_image_position": "cover",
             "toggle_overlay": false,
