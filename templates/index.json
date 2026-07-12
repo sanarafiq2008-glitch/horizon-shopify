@@ -2869,6 +2869,73 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "1783882939261907e4": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_2d6bba7_TVUaiw": {
+          "type": "ai_gen_block_2d6bba7",
+          "settings": {
+            "title": "",
+            "layout": "horizontal",
+            "alignment": "center",
+            "mobile_stack": true,
+            "desktop_width_percent": 100,
+            "show_privacy": true,
+            "privacy_label": "Privacy Policy",
+            "show_terms": true,
+            "terms_label": "Terms of Service",
+            "show_shipping": true,
+            "shipping_label": "Shipping Policy",
+            "show_refund": true,
+            "refund_label": "Refund Policy",
+            "padding": 20,
+            "border_radius": 0,
+            "background_color": "#1a0a0a",
+            "title_size": 18,
+            "title_spacing": 16,
+            "title_color": "#d4af37",
+            "link_size": 14,
+            "link_spacing": 16,
+            "link_color": "#e8d5c4",
+            "link_hover_color": "#d4af37",
+            "separator": "|",
+            "separator_color": "#8b4049"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_2d6bba7_TVUaiw"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
@@ -2884,6 +2951,7 @@
     "section_testimonials_wR7nKq",
     "section_faq_jL8mR6",
     "1783335965257c4be4",
-    "1783698956acafb612"
+    "1783698956acafb612",
+    "1783882939261907e4"
   ]
 }
