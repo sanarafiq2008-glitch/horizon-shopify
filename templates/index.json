@@ -222,7 +222,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h3>New arrivals</h3>",
+                "text": "",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -247,7 +247,7 @@
             "text_PheFjx": {
               "type": "text",
               "settings": {
-                "text": "<p>Introducing our latest products, made especially for the season. Shop your favorites before they're gone!</p>",
+                "text": "",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -268,30 +268,11 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
-            },
-            "button_tpyGeP": {
-              "type": "button",
-              "settings": {
-                "label": "Shop now",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "custom_button_background": "{{ settings.color_palette.foreground }}",
-                "custom_button_text": "{{ settings.color_palette.background }}",
-                "custom_button_border": "{{ settings.color_palette.background }}",
-                "link_text_color": "",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
             }
           },
           "block_order": [
             "text_3YhT6C",
-            "text_PheFjx",
-            "button_tpyGeP"
+            "text_PheFjx"
           ]
         },
         "slide_e8AWRw": {
@@ -509,7 +490,7 @@
       "name": "t:names.marquee",
       "settings": {
         "movement_direction": "normal",
-        "background_color": "#500000",
+        "background_color": "#410152",
         "padding-block-start": 20,
         "padding-block-end": 16,
         "gap_between_elements": 32
