@@ -27,16 +27,31 @@
             "text_color": ""
           },
           "blocks": {}
+        },
+        "announcement_a3zakU": {
+          "type": "_announcement",
+          "settings": {
+            "text": "",
+            "link": "",
+            "font": "var(--font-subheading--family)",
+            "font_size": "1.5rem",
+            "weight": "600",
+            "letter_spacing": "normal",
+            "case": "none",
+            "text_color": ""
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "announcement_Rv3sQk"
+        "announcement_Rv3sQk",
+        "announcement_a3zakU"
       ],
       "name": "t:names.announcement_bar",
       "settings": {
         "speed": 2,
         "section_width": "page-width",
-        "background_color": "#2d0239",
+        "background_color": "#622175",
         "divider_width": 1,
         "divider_color": "{{ settings.color_palette.color2 }}",
         "padding-block-start": 15,
