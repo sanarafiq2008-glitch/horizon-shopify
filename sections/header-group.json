@@ -36,7 +36,7 @@
       "settings": {
         "speed": 2,
         "section_width": "page-width",
-        "background_color": "#58136B",
+        "background_color": "#2D0239",
         "divider_width": 1,
         "divider_color": "{{ settings.color_palette.color2 }}",
         "padding-block-start": 15,
@@ -62,7 +62,7 @@
           "settings": {
             "menu": "main-menu",
             "background_color": "{{ settings.color_palette.foreground }}",
-            "text_color": "{{ settings.color_palette.foreground }}",
+            "text_color": "#2D0239",
             "type_font_primary_size": "1rem",
             "menu_font_style": "inverse",
             "type_font_primary_link": "accent",
