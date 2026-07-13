@@ -1,6 +1,344 @@
+{% doc %}
+  @prompt
+    Create a marquee scrolling announcement bar for the header area. It should display continuously scrolling text from right to left, with customizable announcement messages, scroll speed, text color, background color, and font size. The bar should support multiple announcement items separated by a divider/icon, and match a premium dark luxury aesthetic with maroon, black, and gold accent options.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-marquee-bar-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.vertical_padding }}px 0;
+    position: relative;
+  }
+
+  .ai-marquee-bar__track-{{ ai_gen_id }} {
+    display: flex;
+    width: fit-content;
+    animation: ai-marquee-scroll-{{ ai_gen_id }} {{ block.settings.scroll_speed }}s linear infinite;
+  }
+
+  .ai-marquee-bar__content-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .ai-marquee-bar__item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.font_size }}px;
+    font-weight: {{ block.settings.font_weight }};
+    text-transform: {{ block.settings.text_transform }};
+    letter-spacing: {{ block.settings.letter_spacing }}px;
+  }
+
+  .ai-marquee-bar__divider-{{ ai_gen_id }} {
+    margin: 0 {{ block.settings.item_spacing }}px;
+    color: {{ block.settings.divider_color }};
+    font-size: {{ block.settings.font_size }}px;
+  }
+
+  @keyframes ai-marquee-scroll-{{ ai_gen_id }} {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .ai-marquee-bar__track-{{ ai_gen_id }}:hover {
+    animation-play-state: {{ block.settings.pause_on_hover | default: false | ternary: 'paused', 'running' }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-marquee-bar__item-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size | times: 0.85 }}px;
+    }
+
+    .ai-marquee-bar__divider-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size | times: 0.85 }}px;
+      margin: 0 {{ block.settings.item_spacing | times: 0.7 }}px;
+    }
+  }
+{% endstyle %}
+
+<marquee-bar-{{ ai_gen_id }} class="ai-marquee-bar-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-marquee-bar__track-{{ ai_gen_id }}">
+    <div class="ai-marquee-bar__content-{{ ai_gen_id }}">
+      {% liquid
+        assign items_array = ''
+        if block.settings.item_1 != blank
+          assign items_array = items_array | append: block.settings.item_1
+        endif
+        if block.settings.item_2 != blank
+          if items_array != blank
+            assign items_array = items_array | append: '|||'
+          endif
+          assign items_array = items_array | append: block.settings.item_2
+        endif
+        if block.settings.item_3 != blank
+          if items_array != blank
+            assign items_array = items_array | append: '|||'
+          endif
+          assign items_array = items_array | append: block.settings.item_3
+        endif
+        if block.settings.item_4 != blank
+          if items_array != blank
+            assign items_array = items_array | append: '|||'
+          endif
+          assign items_array = items_array | append: block.settings.item_4
+        endif
+        if block.settings.item_5 != blank
+          if items_array != blank
+            assign items_array = items_array | append: '|||'
+          endif
+          assign items_array = items_array | append: block.settings.item_5
+        endif
+
+        assign items = items_array | split: '|||'
+      %}
+
+      {% if items.size > 0 %}
+        {% for item in items %}
+          <span class="ai-marquee-bar__item-{{ ai_gen_id }}">{{ item }}</span>
+          {% unless forloop.last %}
+            <span class="ai-marquee-bar__divider-{{ ai_gen_id }}">{{ block.settings.divider }}</span>
+          {% endunless %}
+        {% endfor %}
+      {% else %}
+        <span class="ai-marquee-bar__item-{{ ai_gen_id }}">Add announcement messages in the block settings</span>
+      {% endif %}
+    </div>
+
+    <div class="ai-marquee-bar__content-{{ ai_gen_id }}" aria-hidden="true">
+      {% if items.size > 0 %}
+        {% for item in items %}
+          <span class="ai-marquee-bar__item-{{ ai_gen_id }}">{{ item }}</span>
+          {% unless forloop.last %}
+            <span class="ai-marquee-bar__divider-{{ ai_gen_id }}">{{ block.settings.divider }}</span>
+          {% endunless %}
+        {% endfor %}
+      {% else %}
+        <span class="ai-marquee-bar__item-{{ ai_gen_id }}">Add announcement messages in the block settings</span>
+      {% endif %}
+    </div>
+  </div>
+</marquee-bar-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class MarqueeBar{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.track = this.querySelector('.ai-marquee-bar__track-{{ ai_gen_id }}');
+        this.adjustSpeed();
+      }
+
+      adjustSpeed() {
+        if (!this.track) return;
+        
+        const content = this.track.querySelector('.ai-marquee-bar__content-{{ ai_gen_id }}');
+        if (!content) return;
+
+        const contentWidth = content.offsetWidth;
+        const viewportWidth = window.innerWidth;
+        
+        if (contentWidth < viewportWidth) {
+          const multiplier = Math.ceil(viewportWidth / contentWidth) + 1;
+          const currentContent = this.track.innerHTML;
+          
+          for (let i = 1; i < multiplier; i++) {
+            this.track.innerHTML += currentContent;
+          }
+        }
+      }
+    }
+
+    customElements.define('marquee-bar-{{ ai_gen_id }}', MarqueeBar{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Marquee announcement bar",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Announcement messages"
+    },
+    {
+      "type": "text",
+      "id": "item_1",
+      "label": "Message 1",
+      "default": "Free shipping on orders over AED 200"
+    },
+    {
+      "type": "text",
+      "id": "item_2",
+      "label": "Message 2",
+      "default": "Luxury collections now available"
+    },
+    {
+      "type": "text",
+      "id": "item_3",
+      "label": "Message 3",
+      "default": "Shop the latest arrivals"
+    },
+    {
+      "type": "text",
+      "id": "item_4",
+      "label": "Message 4"
+    },
+    {
+      "type": "text",
+      "id": "item_5",
+      "label": "Message 5"
+    },
+    {
+      "type": "text",
+      "id": "divider",
+      "label": "Divider",
+      "default": "✦",
+      "info": "Character or symbol between messages"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#1a0a0a"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#d4af37"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider color",
+      "default": "#8b2635"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "select",
+      "id": "text_transform",
+      "label": "Text case",
+      "options": [
+        {
+          "value": "none",
+          "label": "Default"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        }
+      ],
+      "default": "uppercase"
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "label": "Letter spacing",
+      "min": 0,
+      "max": 4,
+      "step": 0.5,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "vertical_padding",
+      "label": "Vertical padding",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "item_spacing",
+      "label": "Item spacing",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "label": "Scroll speed",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "s",
+      "default": 30,
+      "info": "Lower is faster"
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause on hover",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee announcement bar"
+    }
+  ]
+}
 {% endschema %}
