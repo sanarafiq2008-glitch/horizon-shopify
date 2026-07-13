@@ -2817,9 +2817,157 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "178394933594c5d443": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_17ef615_ag3ic9": {
+          "type": "ai_gen_block_17ef615",
+          "settings": {
+            "announcement_text": "✨ Free Shipping on Orders Over AED 200 ✨ Exclusive Luxury Collections Now Available",
+            "show_separator": true,
+            "separator_icon": "◆",
+            "background_color": "#1a0a14",
+            "text_color": "#d4af37",
+            "separator_color": "#8b1538",
+            "font_size": 14,
+            "font_weight": "500",
+            "text_transform": "uppercase",
+            "letter_spacing": 1.5,
+            "scroll_speed": 30,
+            "pause_on_hover": false,
+            "vertical_padding": 12,
+            "item_spacing": 50,
+            "separator_spacing": 25
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_17ef615_ag3ic9"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "17839495205390bd09": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_9f359fc_pkcmby": {
+          "type": "ai_gen_block_9f359fc",
+          "settings": {
+            "item_1": "Free shipping on orders over AED 200",
+            "item_2": "Luxury collections now available",
+            "item_3": "Shop the latest arrivals",
+            "item_4": "",
+            "item_5": "",
+            "divider": "✦",
+            "background_color": "#1a0a0a",
+            "text_color": "#d4af37",
+            "divider_color": "#8b2635",
+            "font_size": 14,
+            "font_weight": "500",
+            "text_transform": "uppercase",
+            "letter_spacing": 1,
+            "vertical_padding": 12,
+            "item_spacing": 40,
+            "scroll_speed": 30,
+            "pause_on_hover": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_9f359fc_pkcmby"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "1783950202948f6575": {
+      "type": "_blocks",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
+    "17839495205390bd09",
     "slideshow_nkXPM4",
     "marquee_t7XqZ2",
     "custom_liquid_glowFx1",
@@ -2833,6 +2981,8 @@
     "section_faq_jL8mR6",
     "1783335965257c4be4",
     "1783698956acafb612",
-    "1783882939261907e4"
+    "1783882939261907e4",
+    "178394933594c5d443",
+    "1783950202948f6575"
   ]
 }

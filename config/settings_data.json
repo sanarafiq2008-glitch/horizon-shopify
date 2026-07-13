@@ -106,11 +106,11 @@
       "marquee": {
         "type": "marquee",
         "settings": {
-          "movement_direction": "normal",
+          "movement_direction": "reverse",
           "background_color": "",
-          "padding-block-start": 24,
-          "padding-block-end": 24,
-          "gap_between_elements": 24
+          "padding-block-start": 0,
+          "padding-block-end": 0,
+          "gap_between_elements": 0
         }
       }
     },

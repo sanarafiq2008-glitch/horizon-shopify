@@ -11,58 +11,12 @@
   "type": "header",
   "name": "Header",
   "sections": {
-    "header_announcements_9jGBFp": {
-      "type": "header-announcements",
-      "blocks": {
-        "announcement_Rv3sQk": {
-          "type": "_announcement",
-          "settings": {
-            "text": "🔥Up To 50% Off Today🔥",
-            "link": "",
-            "font": "var(--font-subheading--family)",
-            "font_size": "1.5rem",
-            "weight": "600",
-            "letter_spacing": "normal",
-            "case": "none",
-            "text_color": ""
-          },
-          "blocks": {}
-        },
-        "announcement_a3zakU": {
-          "type": "_announcement",
-          "settings": {
-            "text": "",
-            "link": "",
-            "font": "var(--font-subheading--family)",
-            "font_size": "1.5rem",
-            "weight": "600",
-            "letter_spacing": "normal",
-            "case": "none",
-            "text_color": ""
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "announcement_Rv3sQk",
-        "announcement_a3zakU"
-      ],
-      "name": "t:names.announcement_bar",
-      "settings": {
-        "speed": 2,
-        "section_width": "page-width",
-        "background_color": "#58136B",
-        "divider_width": 1,
-        "divider_color": "{{ settings.color_palette.color2 }}",
-        "padding-block-start": 15,
-        "padding-block-end": 15
-      }
-    },
     "header_section": {
       "type": "header",
       "blocks": {
         "header-logo": {
           "type": "_header-logo",
+          "disabled": true,
           "static": true,
           "settings": {
             "hide_logo_on_home_page": true,
@@ -73,6 +27,7 @@
         },
         "header-menu": {
           "type": "_header-menu",
+          "disabled": true,
           "static": true,
           "settings": {
             "menu": "home",
@@ -96,6 +51,7 @@
           "blocks": {}
         }
       },
+      "disabled": true,
       "settings": {
         "logo_position": "left",
         "menu_position": "left",
@@ -143,7 +99,6 @@
     }
   },
   "order": [
-    "header_announcements_9jGBFp",
     "header_section"
   ]
 }
