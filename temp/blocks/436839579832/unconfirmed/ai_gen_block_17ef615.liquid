@@ -1,6 +1,300 @@
+{% doc %}
+  @prompt
+    Create a marquee/scrolling text announcement bar that replaces or works alongside the existing announcement bar. The text should continuously scroll horizontally from right to left in a smooth, infinite loop. Style it to match a premium dark luxury brand with maroon, black, and gold accents. The marquee should be customizable with options for: announcement text, text color, background color, scroll speed, and font size. It should be placed at the very top of the page above the header.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-marquee-bar-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    overflow: hidden;
+    position: relative;
+    z-index: 1000;
+    padding: {{ block.settings.vertical_padding }}px 0;
+  }
+
+  .ai-marquee-bar__track-{{ ai_gen_id }} {
+    display: flex;
+    width: fit-content;
+    animation: ai-marquee-scroll-{{ ai_gen_id }} {{ block.settings.scroll_speed }}s linear infinite;
+  }
+
+  .ai-marquee-bar__content-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    padding-right: {{ block.settings.item_spacing }}px;
+  }
+
+  .ai-marquee-bar__text-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.font_size }}px;
+    font-weight: {{ block.settings.font_weight }};
+    letter-spacing: {{ block.settings.letter_spacing }}px;
+    text-transform: {{ block.settings.text_transform }};
+  }
+
+  .ai-marquee-bar__separator-{{ ai_gen_id }} {
+    display: inline-block;
+    margin: 0 {{ block.settings.separator_spacing }}px;
+    color: {{ block.settings.separator_color }};
+    font-size: {{ block.settings.font_size }}px;
+  }
+
+  @keyframes ai-marquee-scroll-{{ ai_gen_id }} {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .ai-marquee-bar__track-{{ ai_gen_id }}:hover {
+    animation-play-state: {{ block.settings.pause_on_hover | default: false | if: 'paused', 'running' }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-marquee-bar__text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size | times: 0.85 | round }}px;
+    }
+  }
+{% endstyle %}
+
+<marquee-announcement-{{ ai_gen_id }}
+  class="ai-marquee-bar-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-marquee-bar__track-{{ ai_gen_id }}">
+    {% for i in (1..2) %}
+      <div class="ai-marquee-bar__content-{{ ai_gen_id }}">
+        {% if block.settings.announcement_text != blank %}
+          <span class="ai-marquee-bar__text-{{ ai_gen_id }}">
+            {{ block.settings.announcement_text }}
+          </span>
+        {% else %}
+          <span class="ai-marquee-bar__text-{{ ai_gen_id }}">
+            ✨ Free Shipping on Orders Over AED 200 ✨ Exclusive Luxury Collections Now Available
+          </span>
+        {% endif %}
+        
+        {% if block.settings.show_separator %}
+          <span class="ai-marquee-bar__separator-{{ ai_gen_id }}">
+            {{ block.settings.separator_icon }}
+          </span>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</marquee-announcement-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class MarqueeAnnouncement{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.track = this.querySelector('.ai-marquee-bar__track-{{ ai_gen_id }}');
+        this.content = this.querySelector('.ai-marquee-bar__content-{{ ai_gen_id }}');
+        
+        if (this.track && this.content) {
+          this.duplicateContent();
+        }
+      }
+
+      duplicateContent() {
+        const contentWidth = this.content.offsetWidth;
+        const viewportWidth = this.offsetWidth;
+        const duplicatesNeeded = Math.ceil(viewportWidth / contentWidth) + 2;
+        
+        const currentDuplicates = this.track.querySelectorAll('.ai-marquee-bar__content-{{ ai_gen_id }}').length;
+        
+        for (let i = currentDuplicates; i < duplicatesNeeded; i++) {
+          const clone = this.content.cloneNode(true);
+          this.track.appendChild(clone);
+        }
+      }
+    }
+
+    customElements.define('marquee-announcement-{{ ai_gen_id }}', MarqueeAnnouncement{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Marquee announcement bar",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "textarea",
+      "id": "announcement_text",
+      "label": "Announcement text",
+      "default": "✨ Free Shipping on Orders Over AED 200 ✨ Exclusive Luxury Collections Now Available"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_separator",
+      "label": "Show separator",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "separator_icon",
+      "label": "Separator icon",
+      "default": "◆"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#1a0a14"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#d4af37"
+    },
+    {
+      "type": "color",
+      "id": "separator_color",
+      "label": "Separator",
+      "default": "#8b1538"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "select",
+      "id": "text_transform",
+      "label": "Text case",
+      "options": [
+        {
+          "value": "none",
+          "label": "Default"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        }
+      ],
+      "default": "uppercase"
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "label": "Letter spacing",
+      "min": 0,
+      "max": 5,
+      "step": 0.5,
+      "unit": "px",
+      "default": 1.5
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "label": "Scroll speed",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "s",
+      "default": 30
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause on hover",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "vertical_padding",
+      "label": "Vertical padding",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "item_spacing",
+      "label": "Item spacing",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "separator_spacing",
+      "label": "Separator spacing",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee announcement bar"
+    }
+  ]
+}
 {% endschema %}
